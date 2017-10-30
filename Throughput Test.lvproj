@@ -14,6 +14,7 @@
 		<Item Name="Logger.lvclass" Type="LVClass" URL="../logger/Logger.lvclass"/>
 		<Item Name="Remote Controller.vi" Type="VI" URL="../Remote Controller.vi"/>
 		<Item Name="Throughput Test.vi" Type="VI" URL="../Throughput Test.vi"/>
+		<Item Name="testing123.txt" Type="Document" URL="../testing123.txt"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
@@ -46,14 +47,18 @@
 				<Item Name="NI Skyline Tag HTTP.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Tag/Wrapper/Wrapper HTTP_class/NI Skyline Tag HTTP.lvclass"/>
 				<Item Name="NI Skyline Tag AMQP.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Tag/Wrapper/Wrapper AMQP_class/NI Skyline Tag AMQP.lvclass"/>
 				<Item Name="Is Path and Not Empty.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Is Path and Not Empty.vi"/>
-				<Item Name="NI Skyline Message (Sync).lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/NI Skyline Message (Sync).lvclass"/>
 				<Item Name="NI Skyline Message.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/NI Skyline Message.lvclass"/>
-				<Item Name="NI Skyline Message (Async).lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/NI Skyline Message (Async).lvclass"/>
 				<Item Name="NI Skyline Auto Writable File.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/Auto Writable File/NI Skyline Auto Writable File.lvclass"/>
 				<Item Name="NI Skyline Writable File.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/Writable File/NI Skyline Writable File.lvclass"/>
 				<Item Name="NI Skyline File.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/File/NI Skyline File.lvclass"/>
 				<Item Name="NI Skyline File Packet Event.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/Packet Event/NI Skyline File Packet Event.lvclass"/>
 				<Item Name="NI Skyline File Filter.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/Filter/NI Skyline File Filter.lvclass"/>
+				<Item Name="NI Skyline Configuration.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Configuration/HTTP/NI Skyline Configuration.lvlib"/>
+				<Item Name="NI Skyline Message Sync.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/sync/NI Skyline Message Sync.lvclass"/>
+				<Item Name="NI Skyline Message HTTP.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/HTTP Wrapper/NI Skyline Message HTTP.lvclass"/>
+				<Item Name="NI Skyline Message HTTP.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Message/HTTP/NI Skyline Message HTTP.lvlib"/>
+				<Item Name="NI Skyline Message AMQP (Async).lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/AMQP/NI Skyline Message AMQP (Async).lvclass"/>
+				<Item Name="NI Skyline Message AMQP (Sync).lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/AMQP/NI Skyline Message AMQP (Sync).lvclass"/>
 			</Item>
 			<Item Name="niskyline_message.dll" Type="Document" URL="niskyline_message.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -81,7 +86,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{41DA0F48-FC5D-4D4B-9AFF-1FABE3724732}</Property>
-				<Property Name="Bld_version.build" Type="Int">11</Property>
+				<Property Name="Bld_version.build" Type="Int">12</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Throughput Test.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Throughput Test/Throughput Test.exe</Property>
@@ -111,7 +116,7 @@
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
-				<Property Name="PKG_buildNumber" Type="Int">17</Property>
+				<Property Name="PKG_buildNumber" Type="Int">19</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">Throughput Package</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">4</Property>
 				<Property Name="PKG_dependencies[0].Enhanced" Type="Bool">false</Property>
@@ -159,11 +164,27 @@
 				<Property Name="PKG_dependencies[3].Relationship" Type="Str">Required Dependency</Property>
 				<Property Name="PKG_dependencies[3].Type" Type="Str">NIPKG</Property>
 				<Property Name="PKG_description" Type="Str">Publishes tags</Property>
-				<Property Name="PKG_destinations.Count" Type="Int">1</Property>
+				<Property Name="PKG_destinations.Count" Type="Int">5</Property>
 				<Property Name="PKG_destinations[0].ID" Type="Str">{05CCAC64-32CE-494D-958F-C4A3FBE7369F}</Property>
 				<Property Name="PKG_destinations[0].Subdir.Directory" Type="Str">Throughput Test</Property>
 				<Property Name="PKG_destinations[0].Subdir.Parent" Type="Str">root_5</Property>
 				<Property Name="PKG_destinations[0].Type" Type="Str">Subdir</Property>
+				<Property Name="PKG_destinations[1].ID" Type="Str">{210DCA4C-3070-49D4-A1D3-E27212352869}</Property>
+				<Property Name="PKG_destinations[1].Subdir.Directory" Type="Str">testing123</Property>
+				<Property Name="PKG_destinations[1].Subdir.Parent" Type="Str">{98194727-6CBD-41C6-9C0C-6ACA50CC3666}</Property>
+				<Property Name="PKG_destinations[1].Type" Type="Str">Subdir</Property>
+				<Property Name="PKG_destinations[2].ID" Type="Str">{4715523D-2AB1-410C-B1D2-347D56D98CC9}</Property>
+				<Property Name="PKG_destinations[2].Subdir.Directory" Type="Str">LabVIEW 2017</Property>
+				<Property Name="PKG_destinations[2].Subdir.Parent" Type="Str">{6EDF2E1D-9D14-4E77-8635-FB7190B33730}</Property>
+				<Property Name="PKG_destinations[2].Type" Type="Str">Subdir</Property>
+				<Property Name="PKG_destinations[3].ID" Type="Str">{6EDF2E1D-9D14-4E77-8635-FB7190B33730}</Property>
+				<Property Name="PKG_destinations[3].Subdir.Directory" Type="Str">National Instruments</Property>
+				<Property Name="PKG_destinations[3].Subdir.Parent" Type="Str">root_5</Property>
+				<Property Name="PKG_destinations[3].Type" Type="Str">Subdir</Property>
+				<Property Name="PKG_destinations[4].ID" Type="Str">{98194727-6CBD-41C6-9C0C-6ACA50CC3666}</Property>
+				<Property Name="PKG_destinations[4].Subdir.Directory" Type="Str">user.lib</Property>
+				<Property Name="PKG_destinations[4].Subdir.Parent" Type="Str">{4715523D-2AB1-410C-B1D2-347D56D98CC9}</Property>
+				<Property Name="PKG_destinations[4].Type" Type="Str">Subdir</Property>
 				<Property Name="PKG_displayName" Type="Str">Tag Throughput Test</Property>
 				<Property Name="PKG_displayVersion" Type="Str"></Property>
 				<Property Name="PKG_homepage" Type="Str"></Property>
@@ -188,10 +209,13 @@
 				<Property Name="PKG_shortcuts[1].Target.Destination" Type="Str">{05CCAC64-32CE-494D-958F-C4A3FBE7369F}</Property>
 				<Property Name="PKG_shortcuts[1].Target.Source" Type="Ref">/My Computer/Build Specifications/Throughput App</Property>
 				<Property Name="PKG_shortcuts[1].Type" Type="Str">NIPKG</Property>
-				<Property Name="PKG_sources.Count" Type="Int">1</Property>
+				<Property Name="PKG_sources.Count" Type="Int">2</Property>
 				<Property Name="PKG_sources[0].Destination" Type="Str">{05CCAC64-32CE-494D-958F-C4A3FBE7369F}</Property>
 				<Property Name="PKG_sources[0].ID" Type="Ref">/My Computer/Build Specifications/Throughput App</Property>
 				<Property Name="PKG_sources[0].Type" Type="Str">EXE Build</Property>
+				<Property Name="PKG_sources[1].Destination" Type="Str">{210DCA4C-3070-49D4-A1D3-E27212352869}</Property>
+				<Property Name="PKG_sources[1].ID" Type="Ref">/My Computer/testing123.txt</Property>
+				<Property Name="PKG_sources[1].Type" Type="Str">File</Property>
 				<Property Name="PKG_synopsis" Type="Str">Throughput Test</Property>
 				<Property Name="PKG_version" Type="Str">1.0.0</Property>
 			</Item>
@@ -210,7 +234,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5FFF19AB-7A04-400D-A32E-BF0DDD6075B0}</Property>
-				<Property Name="Bld_version.build" Type="Int">10</Property>
+				<Property Name="Bld_version.build" Type="Int">11</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Remote Controller Application.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Controller App/Remote Controller Application.exe</Property>
@@ -240,7 +264,7 @@
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
-				<Property Name="PKG_buildNumber" Type="Int">9</Property>
+				<Property Name="PKG_buildNumber" Type="Int">10</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">Controller Package</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">0</Property>
 				<Property Name="PKG_description" Type="Str"></Property>
