@@ -35,7 +35,6 @@
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
 				<Item Name="NI Skyline Configuration AMQP.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Configuration/Configuration AMQP_class/NI Skyline Configuration AMQP.lvclass"/>
-				<Item Name="NI Skyline Tag HTTP.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Tag/HTTP/NI Skyline Tag HTTP.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="NI Skyline JSON.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/JSON/NI Skyline JSON.lvlib"/>
@@ -53,12 +52,16 @@
 				<Item Name="NI Skyline File.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/File/NI Skyline File.lvclass"/>
 				<Item Name="NI Skyline File Packet Event.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/Packet Event/NI Skyline File Packet Event.lvclass"/>
 				<Item Name="NI Skyline File Filter.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/File/Filter/NI Skyline File Filter.lvclass"/>
-				<Item Name="NI Skyline Configuration.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Configuration/HTTP/NI Skyline Configuration.lvlib"/>
 				<Item Name="NI Skyline Message Sync.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/sync/NI Skyline Message Sync.lvclass"/>
 				<Item Name="NI Skyline Message HTTP.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/HTTP Wrapper/NI Skyline Message HTTP.lvclass"/>
-				<Item Name="NI Skyline Message HTTP.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Message/HTTP/NI Skyline Message HTTP.lvlib"/>
 				<Item Name="NI Skyline Message AMQP (Async).lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/AMQP/NI Skyline Message AMQP (Async).lvclass"/>
 				<Item Name="NI Skyline Message AMQP (Sync).lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Skyline/Message/AMQP/NI Skyline Message AMQP (Sync).lvclass"/>
+				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
+				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
+				<Item Name="NI Skyline Tag HTTP Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Tag/HTTP/NI Skyline Tag HTTP Library.lvlib"/>
+				<Item Name="NI Skyline Configuration Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Configuration/HTTP/NI Skyline Configuration Library.lvlib"/>
+				<Item Name="NI Skyline Utilities.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Utilities/NI Skyline Utilities.lvlib"/>
+				<Item Name="NI Skyline Message HTTP Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/Skyline/Message/HTTP/NI Skyline Message HTTP Library.lvlib"/>
 			</Item>
 			<Item Name="niskyline_message.dll" Type="Document" URL="niskyline_message.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
@@ -66,9 +69,9 @@
 			<Item Name="niskyline_file.dll" Type="Document" URL="niskyline_file.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="niskyline_tag.dll" Type="Document" URL="niskyline_tag.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
+			<Item Name="Get Minion ID.vi" Type="VI" URL="../helpers/Get Minion ID.vi"/>
+			<Item Name="Create Tag Path.vi" Type="VI" URL="../helpers/Create Tag Path.vi"/>
+			<Item Name="Get System Name.vi" Type="VI" URL="../helpers/Get System Name.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Throughput App" Type="EXE">
@@ -86,7 +89,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{41DA0F48-FC5D-4D4B-9AFF-1FABE3724732}</Property>
-				<Property Name="Bld_version.build" Type="Int">12</Property>
+				<Property Name="Bld_version.build" Type="Int">14</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Throughput Test.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Throughput Test/Throughput Test.exe</Property>
@@ -116,18 +119,19 @@
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
-				<Property Name="PKG_buildNumber" Type="Int">19</Property>
+				<Property Name="PKG_autoSelectDeps" Type="Bool">false</Property>
+				<Property Name="PKG_buildNumber" Type="Int">23</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">Throughput Package</Property>
-				<Property Name="PKG_dependencies.Count" Type="Int">4</Property>
+				<Property Name="PKG_dependencies.Count" Type="Int">3</Property>
 				<Property Name="PKG_dependencies[0].Enhanced" Type="Bool">false</Property>
 				<Property Name="PKG_dependencies[0].MaxVersion" Type="Str"></Property>
 				<Property Name="PKG_dependencies[0].MaxVersionInclusive" Type="Bool">false</Property>
 				<Property Name="PKG_dependencies[0].MinVersion" Type="Str"></Property>
 				<Property Name="PKG_dependencies[0].MinVersionType" Type="Str">Inclusive</Property>
-				<Property Name="PKG_dependencies[0].NIPKG.DisplayName" Type="Str">NI LabVIEW 2017 Runtime</Property>
-				<Property Name="PKG_dependencies[0].Package.Name" Type="Str">ni-labview-2017-runtime-engine-x86</Property>
-				<Property Name="PKG_dependencies[0].Package.Section" Type="Str">Runtime</Property>
-				<Property Name="PKG_dependencies[0].Package.Synopsis" Type="Str">NI LabVIEW 2017 Runtime provides libraries and other files necessary to execute LabVIEW 2017-built applications and shared libraries. Includes NI Reports, 3D graph support, and a browser plug-in that enables clients to view and control front panels remotely using a browser.</Property>
+				<Property Name="PKG_dependencies[0].NIPKG.DisplayName" Type="Str">NI Skyline File Client x86 Runtime</Property>
+				<Property Name="PKG_dependencies[0].Package.Name" Type="Str">ni-skyline-file-client-x86</Property>
+				<Property Name="PKG_dependencies[0].Package.Section" Type="Str">Add-Ons</Property>
+				<Property Name="PKG_dependencies[0].Package.Synopsis" Type="Str">NI Skyline File Client x86 Runtime</Property>
 				<Property Name="PKG_dependencies[0].Relationship" Type="Str">Required Dependency</Property>
 				<Property Name="PKG_dependencies[0].Type" Type="Str">NIPKG</Property>
 				<Property Name="PKG_dependencies[1].Enhanced" Type="Bool">false</Property>
@@ -135,10 +139,10 @@
 				<Property Name="PKG_dependencies[1].MaxVersionInclusive" Type="Bool">false</Property>
 				<Property Name="PKG_dependencies[1].MinVersion" Type="Str"></Property>
 				<Property Name="PKG_dependencies[1].MinVersionType" Type="Str">Inclusive</Property>
-				<Property Name="PKG_dependencies[1].NIPKG.DisplayName" Type="Str">NI Skyline File Client x86 Runtime</Property>
-				<Property Name="PKG_dependencies[1].Package.Name" Type="Str">ni-skyline-file-client-x86</Property>
+				<Property Name="PKG_dependencies[1].NIPKG.DisplayName" Type="Str">NI Skyline Message Client x86 Runtime</Property>
+				<Property Name="PKG_dependencies[1].Package.Name" Type="Str">ni-skyline-message-client-x86</Property>
 				<Property Name="PKG_dependencies[1].Package.Section" Type="Str">Add-Ons</Property>
-				<Property Name="PKG_dependencies[1].Package.Synopsis" Type="Str">NI Skyline File Client x86 Runtime</Property>
+				<Property Name="PKG_dependencies[1].Package.Synopsis" Type="Str">NI Skyline Message Client x86 Runtime</Property>
 				<Property Name="PKG_dependencies[1].Relationship" Type="Str">Required Dependency</Property>
 				<Property Name="PKG_dependencies[1].Type" Type="Str">NIPKG</Property>
 				<Property Name="PKG_dependencies[2].Enhanced" Type="Bool">false</Property>
@@ -146,10 +150,10 @@
 				<Property Name="PKG_dependencies[2].MaxVersionInclusive" Type="Bool">false</Property>
 				<Property Name="PKG_dependencies[2].MinVersion" Type="Str"></Property>
 				<Property Name="PKG_dependencies[2].MinVersionType" Type="Str">Inclusive</Property>
-				<Property Name="PKG_dependencies[2].NIPKG.DisplayName" Type="Str">NI Skyline Message Client x86 Runtime</Property>
-				<Property Name="PKG_dependencies[2].Package.Name" Type="Str">ni-skyline-message-client-x86</Property>
+				<Property Name="PKG_dependencies[2].NIPKG.DisplayName" Type="Str">NI Skyline Tag Client x86 Runtime</Property>
+				<Property Name="PKG_dependencies[2].Package.Name" Type="Str">ni-skyline-tag-client-x86</Property>
 				<Property Name="PKG_dependencies[2].Package.Section" Type="Str">Add-Ons</Property>
-				<Property Name="PKG_dependencies[2].Package.Synopsis" Type="Str">NI Skyline Message Client x86 Runtime</Property>
+				<Property Name="PKG_dependencies[2].Package.Synopsis" Type="Str">NI Skyline Tag Client x86 Runtime</Property>
 				<Property Name="PKG_dependencies[2].Relationship" Type="Str">Required Dependency</Property>
 				<Property Name="PKG_dependencies[2].Type" Type="Str">NIPKG</Property>
 				<Property Name="PKG_dependencies[3].Enhanced" Type="Bool">false</Property>
@@ -188,11 +192,12 @@
 				<Property Name="PKG_displayName" Type="Str">Tag Throughput Test</Property>
 				<Property Name="PKG_displayVersion" Type="Str"></Property>
 				<Property Name="PKG_homepage" Type="Str"></Property>
+				<Property Name="PKG_lvrteTracking" Type="Bool">true</Property>
 				<Property Name="PKG_maintainer" Type="Str">National Instruments &lt;&gt;</Property>
 				<Property Name="PKG_output" Type="Path">../builds/NI_AB_PROJECTNAME/Throughput Package</Property>
 				<Property Name="PKG_output.Type" Type="Str">relativeToCommon</Property>
 				<Property Name="PKG_packageName" Type="Str">throughput-test</Property>
-				<Property Name="PKG_ProviderVersion" Type="Int">17</Property>
+				<Property Name="PKG_ProviderVersion" Type="Int">1810</Property>
 				<Property Name="PKG_section" Type="Str">Application Software</Property>
 				<Property Name="PKG_shortcuts.Count" Type="Int">2</Property>
 				<Property Name="PKG_shortcuts[0].Destination" Type="Str">root_8</Property>
@@ -234,7 +239,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5FFF19AB-7A04-400D-A32E-BF0DDD6075B0}</Property>
-				<Property Name="Bld_version.build" Type="Int">11</Property>
+				<Property Name="Bld_version.build" Type="Int">13</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Remote Controller Application.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Controller App/Remote Controller Application.exe</Property>
@@ -264,7 +269,8 @@
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
-				<Property Name="PKG_buildNumber" Type="Int">10</Property>
+				<Property Name="PKG_autoSelectDeps" Type="Bool">false</Property>
+				<Property Name="PKG_buildNumber" Type="Int">12</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">Controller Package</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">0</Property>
 				<Property Name="PKG_description" Type="Str"></Property>
@@ -276,11 +282,12 @@
 				<Property Name="PKG_displayName" Type="Str">My Package</Property>
 				<Property Name="PKG_displayVersion" Type="Str"></Property>
 				<Property Name="PKG_homepage" Type="Str"></Property>
+				<Property Name="PKG_lvrteTracking" Type="Bool">false</Property>
 				<Property Name="PKG_maintainer" Type="Str">National Instruments &lt;&gt;</Property>
 				<Property Name="PKG_output" Type="Path">../builds/NI_AB_PROJECTNAME/Controller Package</Property>
 				<Property Name="PKG_output.Type" Type="Str">relativeToCommon</Property>
 				<Property Name="PKG_packageName" Type="Str">throughtput-controller</Property>
-				<Property Name="PKG_ProviderVersion" Type="Int">17</Property>
+				<Property Name="PKG_ProviderVersion" Type="Int">1810</Property>
 				<Property Name="PKG_section" Type="Str">Application Software</Property>
 				<Property Name="PKG_shortcuts.Count" Type="Int">1</Property>
 				<Property Name="PKG_shortcuts[0].Destination" Type="Str">root_8</Property>
